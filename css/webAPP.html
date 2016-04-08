@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://192.168.1.33:8088/mainlist.html -->
+<html data-dpr="2" lang="en" style="width: 100%; height: 100%; overflow: hidden; font-size: 37.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+	<title>webAPP</title>
+	<link rel="stylesheet" type="text/css" href="./webAPP_files/base.css">
+	<script type="text/javascript" src="./webAPP_files/Init.js"></script><style type="text/css"></style>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body style="width: 375px; height: 627px;">
+	<!-- 头部 -->
+	<div class="lx-header-top">
+		<h1 class="lx-header-top-title">XXX系统</h1>
+		<img src="./webAPP_files/user.png" class="lx-header-top-login">
+	</div>
+	<!-- 主体 -->
+	<div class="lx-body-main" style="height: 13.2533rem; overflow-y: auto; overflow-x: hidden;">
+		<div id="list">
+			<div><input type="button" value="点击出弹窗" id="btn"></div>
+			<div>5555555555555</div>
+			<div>5555555555555</div>
+			<div>5555555555555</div>
+			<div>5555555555555</div>
+			<div>5555555555555</div>
+			<ul class="_list" id="list0">
+				<li style="height: 1rem;">这里编写主要内容</li>
+				<li style="height: 1rem;">风飒飒1</li>
+				<li style="height: 1rem;">风飒飒</li>
+				<li style="height: 1rem;">风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒</li>
+				<li style="height: 1rem;"> 风飒飒3</li>
+			</ul>
+		</div>
+		
+	</div>
+	<div class="lx-hiddenMain" style="display: none;"></div>
+	<div class="lx-alert animated zoomOut" style="display: none;"> 
+		<div class="lx-message">Hello World</div>
+		<div class="lx-button-list">
+			<span class="lx-ok">确定</span><span class="lx-cancel">取消</span>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="lx-footer"></div>
+	<!-- 页面初始化 -->
+	<script type="text/javascript">
+		inIt();
+		var mainScroll = document.querySelector('.lx-body-main');
+		var _list = document.getElementById('list');
+		var list0 = document.getElementById('list0');
+		mainScroll.onscroll = function(){
+			if(mainScroll.scrollTop+mainScroll.offsetHeight - _list.offsetHeight >= 0 ){
+				(function(){
+					for(var i = 0;i<5;i++){
+						var li = document.createElement('li');
+						li.innerHTML = '列表'+(i+1)+'';
+						list0.appendChild(li);
+					}
+				})();
+			}
+		}
+
+		String.prototype.toLxalert = function(issure,message){
+			var lxalert_hidden = document.querySelector('.lx-hiddenMain');
+			var lxalert        = document.querySelector('.lx-alert');
+			var ok             = document.querySelector('.lx-ok');
+			var cancel         = document.querySelector('.lx-cancel');
+			var lxmessage      = document.querySelector('.lx-message');
+			if(issure == true){
+				cancel.style.display = 'none';
+				ok.style.float = 'none';
+				ok.style.marginTop = '0';
+				ok.style.marginBottom = '0';
+				ok.style.marginRight = 'auto';
+				ok.style.marginLeft = 'auto';
+			}
+			lxmessage.innerHTML = ""+message+"";
+			mainScroll.onclick = function(){	
+				lxalert_hidden.style.display = 'block';
+				lxalert.style.display = 'block';
+				lxalert.className = 'lx-alert animated zoomIn';
+			}
+			ok.onclick = function(){
+				lxalert.className = 'lx-alert animated zoomOut';
+				lxalert_hidden.style.display = 'none';
+				setTimeout(function(){lxalert.style.display = 'none';},500)
+			}
+			cancel.onclick = function(){
+				lxalert.className = 'lx-alert animated zoomOut';
+				lxalert_hidden.style.display = 'none';			
+				setTimeout(function(){lxalert.style.display = 'none';},500)
+			}
+		}
+		// String.prototype.stringtoarr=function(){  
+		//            var arr=[];  
+		//            for(x=0;x<this.length;x++){  
+		//            arr[x]=this.charAt(x);  
+		//            }  
+		//     return arr;      
+		// }  
+		// var s = ''
+		var btn = document.getElementById('btn');
+		btn.toString().toLxalert(false,'Hello World');
+		
+
+		
+		
+	</script>
+
+
+</body></html>

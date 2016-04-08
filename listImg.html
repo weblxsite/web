@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  data-dpr="2" lang="en" style="width: 100%; height: 100%; overflow: hidden;">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+	<title>webAPP</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script type="text/javascript" src="js/Init.js"></script>
+	<script type="text/javascript" src="js/img.js"></script>
+</head>
+<body>
+	<div class="lx-header-top">
+		<h1 class="lx-header-top-title">XXX系统</h1>
+		<img src="images/user.png" class="lx-header-top-login">
+	</div>
+	<div class="lx-body-main">
+		<div class="lx-UI-img">
+			<div data-slide-index="0"><a href="http://www.baidu.com"><img src="images/1.jpg"></a></div>
+			<div data-slide-index="1"><a href="#"><img src="images/2.jpg"></a></div>
+			<div data-slide-index="2"><a href="#"><img src="images/3.jpg"></a></div>
+			<div data-slide-index="3"><a href="#"><img src="images/4.jpg"></a></div>
+			<div data-slide-index="4"><a href="#"><img src="images/5.jpg"></a></div>
+		</div>
+		<div class="btn-blue"></div>
+	</div>
+	<div class="lx-footer"></div>
+
+	<script type="text/javascript">
+	  	function init(){
+	  		inIt();//框架初始化
+			imgInit('lx-UI-img');// 图片轮动
+		}
+		window.onload=init;
+	</script>
+</body>
+</html>
